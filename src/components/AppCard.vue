@@ -1,13 +1,14 @@
 <template>
     <li class="card">
         <div class="card-body">
-            <p>{{ item.title }}</p>
+            <img class="thumb" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="">
+            <p>Titolo: {{ item.title }}</p>
             <p>{{ item.name }}</p>
-            <p>{{ item.original_title }}</p>
+            <p>Titolo originale: {{ item.original_title }}</p>
             <p>{{ item.original_name }}</p>
             <!-- <p>{{ item.original_language }}</p> -->
-            <img :src="convertFlag(item.original_language)" alt="">
-            <p>{{ item.vote_average }}</p>
+            <img class="flags" :src="convertFlag(item.original_language)" alt="">
+            <p>Voto medio: {{ item.vote_average }}</p>
         </div>
     </li>
 </template>
@@ -37,8 +38,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.thumb {
+    max-width: 100px;
+}
 
-img {
+.flags {
     max-width: 25px;
 }
 
