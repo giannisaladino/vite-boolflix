@@ -1,15 +1,20 @@
 <template>
-  <div>
-    ciao
-  </div>
+  <AppHeader />
+  <AppContent />
 </template>
 
 <script>
-  export default {
-    
-  }
+import AppHeader from "./components/AppHeader.vue";
+import AppContent from "./components/AppContent.vue";
+
+export default {
+  components: {
+    AppHeader,
+    AppContent
+  },
+}
 </script>
 
 <style lang="scss">
-
+@use "./style/general.scss"
 </style>
