@@ -25,6 +25,8 @@ export default {
     methods: {
         getValuesElement() {
             // console.log(this.store.query);
+            
+            //chiamata api per i film
             axios.get('https://api.themoviedb.org/3/search/movie', {
                 params: {
                     api_key: 'edd4a3fe67429d35de6cfe46b5a82652',
@@ -34,6 +36,17 @@ export default {
                 const results = res.data.results;
                 // console.log(results);
                 store.movies = results;
+            })
+
+            //chiamata api per le serie-tv
+            axios.get('https://api.themoviedb.org/3/search/tv', {
+                params: {
+                    api_key: 'edd4a3fe67429d35de6cfe46b5a82652',
+                    query: this.query
+                }
+            }).then((res) => {
+                const results = res.data.results;
+                store.tvs = results;
             })
         }
     },
