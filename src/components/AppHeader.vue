@@ -1,12 +1,12 @@
 <template>
     <header class="page-header">
-        <div class="container">
-            <div>
-                LOGO
+        <div class="container-lg">
+            <div class="logo fs-3">
+                BoolFlix
             </div>
             <div>
                 <input v-model="query" class="input_search" type="text" placeholder="Cerca...">
-                <button @click="getValuesElement" class="btn">Invia</button>
+                <button @click="getValuesElement" class="btn-enter">Invia</button>
             </div>
         </div>
     </header>
@@ -54,10 +54,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "bootstrap";
 
-.container {
-    color: white;
+
+.logo {
+    color: red;
+}
+
+.page-header {
     background-color: black;
+
+}
+
+.container-lg {
+    color: white;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -71,7 +81,7 @@ export default {
     border: none;
 }
 
-.btn {
+.btn-enter {
     padding: 5px 8px;
     border-radius: 5px;
     border: none;

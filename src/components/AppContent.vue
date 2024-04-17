@@ -1,22 +1,20 @@
 <template>
-    <main class="main-content">
-        <section class="movies-section">
-            <div class="container">
+    <main class="container-lg mt-3 d-flex">
+        <section class="container-lg">
+            <div>
                 <h2>Movies:</h2>
             </div>
-            <div class="container">
-                <ul>
-                    <AppCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
-                </ul>
+            <div>
+                <AppCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
             </div>
         </section>
 
-        <section class="tvs-section">
-            <div class="container">
+        <section class="container-lg">
+            <div>
                 <h2>Serie-TV:</h2>
             </div>
-            <div class="container">
-                <ul>
+            <div>
+                <ul class="items-list">
                     <AppCard v-for="tv in store.tvs" :key="tv.id" :item="tv" />
                 </ul>
             </div>
@@ -40,12 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-content {
-    margin: 20px 15px;
-}
+@use 'bootstrap';
 
-.movies-section {
-    margin: 20px 0;
-}
 
 </style>
