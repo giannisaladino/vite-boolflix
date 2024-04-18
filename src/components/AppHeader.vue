@@ -1,7 +1,7 @@
 <template>
     <header class="page-header">
         <div class="container-lg">
-            <div class="logo fs-3">
+            <div class="logo fs-1">
                 BoolFlix
             </div>
             <div>
@@ -59,10 +59,12 @@ export default {
 
 .logo {
     color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
 
 .page-header {
-    background-color: black;
+    background-color: #181818;
 
 }
 

@@ -1,17 +1,17 @@
 <template>
-    <div class="card">
-        <p>Titolo: {{ getTitle() }}</p>
-        <!-- item.original_title !== undefined ? item.original_title : item.original_name -->
-        <!-- <p>Titolo originale: {{ item.original_title ?? item.original_name }}</p> -->
-        <p>Titolo originale: {{ getTitle() }}</p>
+    <div v-if="item.poster_path !== null" class="col">
+        <!-- <p>Titolo: {{ getTitle() }}</p> -->
+                        <!-- item.original_title !== undefined ? item.original_title : item.original_name -->
+                        <!-- <p>Titolo originale: {{ item.original_title ?? item.original_name }}</p> -->
+        <!-- <p>Titolo originale: {{ getTitle() }}</p> -->
         <img class="thumb" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="">
-        <!-- <p>{{ item.original_language }}</p> -->
-        <img class="flags" :src="convertFlag(item.original_language)" alt="">
-        <p>Voto medio: {{ item.vote_average }}</p>
-        <ul>
+                        <!-- <p>{{ item.original_language }}</p> -->
+        <!-- <img class="flags" :src="convertFlag(item.original_language)" alt=""> -->
+                        <!-- <p>Voto medio: {{ item.vote_average }}</p> -->
+        <!-- <ul>
             <li v-for="item in getStars(item.vote_average)">*</li>
             <li v-for="item in getEmptyStars(parseInt(item.vote_average))">-</li>
-        </ul>
+        </ul> -->
     </div>
 </template>
 
@@ -55,7 +55,13 @@ export default {
 
 <style lang="scss" scoped>
 .thumb {
-    max-width: 100px;
+    max-width: 200px;
+    border: 2px solid #FF0000;
+}
+
+.thumb:hover {
+    border: 5px solid white;
+    transition: 200ms;
 }
 
 .flags {
