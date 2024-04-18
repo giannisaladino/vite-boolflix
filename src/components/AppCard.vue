@@ -1,5 +1,5 @@
 <template>
-    <div v-if="item.poster_path !== null" class="col">
+    <div v-if="item.poster_path !== null" class="col-lg-3 col-md-4 col-sm-6">
         <!-- <p>Titolo: {{ getTitle() }}</p> -->
                         <!-- item.original_title !== undefined ? item.original_title : item.original_name -->
                         <!-- <p>Titolo originale: {{ item.original_title ?? item.original_name }}</p> -->
