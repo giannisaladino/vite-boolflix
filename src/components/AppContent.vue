@@ -13,7 +13,7 @@
             <div class="section-title">
                 <h2>SERIES</h2>
             </div>
-            <div class="row g-4 d-flex flex-wrap">
+            <div class="row gy-5 d-flex flex-wrap">
                 <AppCard v-for="tv in store.tvs" :key="tv.id" :item="tv" />
             </div>
         </section>

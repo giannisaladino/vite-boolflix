@@ -1,17 +1,21 @@
 <template>
-    <div v-if="item.poster_path !== null" class="col-lg-3 col-md-4 col-sm-6">
-        <!-- <p>Titolo: {{ getTitle() }}</p> -->
-                        <!-- item.original_title !== undefined ? item.original_title : item.original_name -->
-                        <!-- <p>Titolo originale: {{ item.original_title ?? item.original_name }}</p> -->
-        <!-- <p>Titolo originale: {{ getTitle() }}</p> -->
+    <div v-if="item.poster_path !== null" class="item col-lg-3 col-md-4 col-sm-6">
+        <!-- item.original_title !== undefined ? item.original_title : item.original_name -->
+        <!-- <p>Titolo originale: {{ item.original_title ?? item.original_name }}</p> -->
         <img class="thumb" :src="`https://image.tmdb.org/t/p/w342${item.poster_path}`" alt="">
-                        <!-- <p>{{ item.original_language }}</p> -->
+        <div class="hover d-flex flex-column">
+            <span class="title"> <strong>Titolo:</strong> {{ getTitle() }}</span>
+            <span><strong>Titolo Originale:</strong> {{ getTitle() }}</span>
+            <span class="overview"><strong>Overview:</strong> {{ item.overview }}</span>
+            <ul>
+                <span><strong>Voto:</strong></span> 
+                <li v-for="item in getStars(item.vote_average)">*</li>
+                <li v-for="item in getEmptyStars(parseInt(item.vote_average))">-</li>
+            </ul>
+        </div>
+        <!-- <p>{{ item.original_language }}</p> -->
         <!-- <img class="flags" :src="convertFlag(item.original_language)" alt=""> -->
-                        <!-- <p>Voto medio: {{ item.vote_average }}</p> -->
-        <!-- <ul>
-            <li v-for="item in getStars(item.vote_average)">*</li>
-            <li v-for="item in getEmptyStars(parseInt(item.vote_average))">-</li>
-        </ul> -->
+        <!-- <p>Voto medio: {{ item.vote_average }}</p> -->
     </div>
 </template>
 
@@ -46,7 +50,7 @@ export default {
             return Math.floor(numero / 2);
         },
         getEmptyStars(numero) {
-            return Math.round(5 - numero/2);
+            return Math.round(5 - numero / 2);
         }
 
     }
@@ -54,15 +58,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.item {
+    position: relative;
+
+    .hover {
+        opacity: 0;
+        background-color: black;
+        color: white;
+        position: absolute;
+        width: 95%;
+        height: 100%;
+        top: 0;
+        gap: 7px;
+
+        .title {
+            margin-top: 30px;
+        }
+
+        .overview {
+            font-size: 10px;
+        }
+    }
+}
+
+.hover:hover {
+    opacity: 0.9;
+    transition: 200ms;
+}
+
 .thumb {
-    max-width: 200px;
+    width: 100%;
     border: 2px solid #FF0000;
 }
 
 .thumb:hover {
     border: 5px solid white;
-    transition: 200ms;
-}
+    transition: 300ms;
+ }
 
 .flags {
     display: block;
@@ -76,5 +108,6 @@ export default {
 ul {
     list-style: none;
     display: flex;
+    padding: 0;
 }
 </style>
