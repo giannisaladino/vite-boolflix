@@ -76,7 +76,7 @@ export default {
         }
 
         .overview {
-            font-size: 10px;
+            font-size: 11px;
         }
     }
 }
@@ -88,13 +88,9 @@ export default {
 
 .thumb {
     width: 100%;
+    height: 100%;
     border: 2px solid #FF0000;
 }
-
-.thumb:hover {
-    border: 5px solid white;
-    transition: 300ms;
- }
 
 .flags {
     display: block;
