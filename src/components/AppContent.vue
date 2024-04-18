@@ -59,7 +59,7 @@ export default {
     h2 {
         color: white;
         text-decoration: underline;
-        font-size: 45px;
+        font-size: 35px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 }

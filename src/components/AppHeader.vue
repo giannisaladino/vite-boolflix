@@ -1,7 +1,7 @@
 <template>
     <header class="page-header">
         <div class="container-lg">
-            <div class="logo fs-1">
+            <div class="logo">
                 BoolFlix
             </div>
             <div>
@@ -58,6 +58,7 @@ export default {
 
 
 .logo {
+    font-size: 55px;
     color: red;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
