@@ -9,8 +9,8 @@
             <span class="overview"><strong>Overview:</strong> {{ item.overview }}</span>
             <ul>
                 <span><strong>Voto:</strong></span> 
-                <li v-for="item in getStars(item.vote_average)"><i class="fa-solid fa-star" style="color: #FFD43B;"></i></li>
-                <li v-for="item in getEmptyStars(parseInt(item.vote_average))"><i class="fa-regular fa-star"></i></li>
+                <li v-for="item in getStars(item.vote_average)"><font-awesome-icon :icon="['fas', 'star']" style="color: #FFD43B;" /></li>
+                <li v-for="item in getEmptyStars(parseInt(item.vote_average))"><font-awesome-icon :icon="['far', 'star']" /></li>
             </ul>
         </div>
         <!-- <p>{{ item.original_language }}</p> -->
