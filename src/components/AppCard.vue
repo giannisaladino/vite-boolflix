@@ -8,7 +8,11 @@
         <!-- <p>{{ item.original_language }}</p> -->
         <img class="flags" :src="convertFlag(item.original_language)" alt="">
         <p>Voto medio: {{ item.vote_average }}</p>
-    </div>  
+        <ul>
+            <li v-for="item in getStars(item.vote_average)">*</li>
+            <li v-for="item in getEmptyStars(parseInt(item.vote_average))">-</li>
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -21,7 +25,7 @@ export default {
     },
     methods: {
         getTitle() {
-            if(this.item.original_title !== undefined) {
+            if (this.item.original_title !== undefined) {
                 return this.item.original_title;
             } else {
                 return this.item.original_name;
@@ -38,6 +42,12 @@ export default {
                 return '../flags/fr.avif'
             }
         },
+        getStars(numero) {
+            return Math.floor(numero / 2);
+        },
+        getEmptyStars(numero) {
+            return Math.round(5 - numero/2);
+        }
 
     }
 }
@@ -55,5 +65,10 @@ export default {
 
 .card {
     margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
 }
 </style>
